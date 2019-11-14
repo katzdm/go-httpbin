@@ -76,6 +76,10 @@ func (h *HTTPBin) RequestWithBody(w http.ResponseWriter, r *http.Request) {
 	}
 
 	body, _ := json.Marshal(resp)
+
+	fmt.Printf("\nHeaders: %+v\n", resp.Headers)
+	fmt.Printf("\nBody: %+v\n", body)
+
 	writeJSON(w, body, http.StatusOK)
 }
 
