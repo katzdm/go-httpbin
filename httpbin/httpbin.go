@@ -108,7 +108,7 @@ func (h *HTTPBin) Handler() http.Handler {
 
 	mux.HandleFunc("/get", methods(h.Get, "GET"))
 	mux.HandleFunc("/post", methods(h.RequestWithBody, "POST"))
-	mux.HandleFunc("/put", methods(h.RequestWithBody, "PUT"))
+	mux.HandleFunc("/put/", methods(h.RequestWithBody, "PUT"))
 	mux.HandleFunc("/patch", methods(h.RequestWithBody, "PATCH"))
 	mux.HandleFunc("/delete", methods(h.RequestWithBody, "DELETE"))
 
