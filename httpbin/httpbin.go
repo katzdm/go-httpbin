@@ -184,7 +184,6 @@ func (h *HTTPBin) Handler() http.Handler {
 	// Apply global middleware
 	var handler http.Handler
 	handler = mux
-	handler = limitRequestSize(h.MaxBodySize, handler)
 	handler = preflight(handler)
 	handler = autohead(handler)
 	if h.Observer != nil {
